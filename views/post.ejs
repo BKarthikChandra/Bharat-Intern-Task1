@@ -1,0 +1,94 @@
+<%- include('template1.ejs') %>
+<%- include('page2.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: dark;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        p {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        video {
+            display: block;
+            margin: 0 auto;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <% if(result) {%>
+    <% result.forEach((row) => { %>
+    <div class="container">
+              
+        <h2><%= row.username %></h2>
+        
+        <!-- Display the text -->
+        <% if (row.text) { %>
+            <p><strong>Text:</strong></p>
+            <p><%= row.text %></p>
+        <% } %>
+        
+        <!-- Display the image if available -->
+        <% if (row.image) { %>
+            <p><strong>Image:</strong></p>
+         
+            
+            <img src="uploads/<%= row.image %>" alt="User Image" width="200">
+        <% } %>
+        
+        <!-- Display the video if available -->
+        <% if (row.video) { %>
+            <p><strong>Video:</strong></p>
+            <video controls width="320" height="240">
+                <source src="<%= row.video %>" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        <% } %>
+        
+        
+     
+    </div>
+    <%})%>
+    <%}%>
+</body>
+</html>

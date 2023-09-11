@@ -1,0 +1,106 @@
+<%- include('template1.ejs') %>
+<%- include('page2.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Content</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: dark;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .custom-file-upload {
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .custom-file-upload:hover {
+            background-color: #0056b3;
+        }
+
+        .upload-button-label {
+            margin-left: 10px;
+        }
+
+        .upload-result {
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Upload Content</h2>
+        <form enctype="multipart/form-data" action="/upload" method="post">
+            <!-- Upload Photo -->
+            <div class="form-group">
+                <label for="photo">Upload Photo:</label>
+                <input type="file" name="photo" id="photo">
+                <label class="custom-file-upload" for="photo">Choose File</label>
+                <span class="upload-button-label" id="photo-label">No file selected</span>
+            </div>
+
+            <!-- Upload Text (textarea) -->
+            <div class="form-group">
+                <label for="text">Upload Text:</label>
+                <textarea name="text" id="text" rows="4" cols="50"></textarea>
+            </div>
+
+            <!-- Upload Video -->
+            <div class="form-group">
+                <label for="video">Upload Video:</label>
+                <input type="file" name="video" id="video">
+                <label class="custom-file-upload" for="video">Choose File</label>
+                <span class="upload-button-label" id="video-label">No file selected</span>
+            </div>
+
+            <input type="submit" value="Upload" class="btn btn-primary">
+        </form>
+
+        <!-- Upload result message (displayed after submission) -->
+        <div class="upload-result" id="upload-result"></div>
+    </div>
+
+    <script>
+        // Display selected file names next to the custom upload buttons
+        document.getElementById('photo').addEventListener('change', function() {
+            document.getElementById('photo-label').textContent = this.files[0].name;
+        });
+
+        document.getElementById('video').addEventListener('change', function() {
+            document.getElementById('video-label').textContent = this.files[0].name;
+        });
+    </script>
+</body>
+</html>

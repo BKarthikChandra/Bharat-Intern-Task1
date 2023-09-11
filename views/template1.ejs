@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Center the header text horizontally */
+        .center-text {
+            text-align: center;
+        }
+     /* Style the logout link in the top-right corner */
+       .logout-link {
+            position: absolute;
+            top: 10px;
+            right: 10px; /* Change left to right */
+            color: red; /* Customize the color as needed */
+        }
+
+    </style>
+</head>
+<body>
+    <header class="bg-dark">
+        <!-- Logout link in the top-left corner -->
+        <a href="/logout" class="logout-link">Logout</a>
+        <!-- Centered header text using Bootstrap classes -->
+        <div class="container text-center py-4">
+            <h1 class="display-4" style="color: white;">Welcome <%= username %></h1>
+        </div>
+    </header>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

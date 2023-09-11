@@ -1,0 +1,44 @@
+/* Reset default margin and padding */
+body, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the vertical navbar */
+.vertical-navbar {
+    background-color: #333; /* Background color */
+    color: #fff; /* Text color */
+    width: 200px; /* Width of the navbar */
+    position: fixed; /* Fixed position */
+    height: 100%; /* Full height of the viewport */
+    overflow: hidden; /* Hide the overflowing content */
+}
+
+/* Style the navbar list items */
+.vertical-navbar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.vertical-navbar li {
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Style the navbar links */
+.vertical-navbar a {
+    text-decoration: none;
+    color: #fff;
+    display: block; /* Make the entire list item clickable */
+}
+
+/* Highlight the active link */
+.vertical-navbar a:hover {
+    background-color: #555;
+}
+
+/* Style the content area (adjust margin to leave space for the navbar) */
+.content {
+    margin-left: 220px; /* Adjust based on the width of the navbar */
+    padding: 20px;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Login</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-header {
+            text-align: center;
+        }
+
+        .login-form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .btn-login {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn-login:hover {
+            background-color: #0056b3;
+        }
+
+        /* Center the header content */
+        .header {
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-family: 'Lobster', cursive; 
+
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>The Blog Website</h1>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto login-container">
+                <h2 class="login-header">Blog Login</h2>
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-login btn-block">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
