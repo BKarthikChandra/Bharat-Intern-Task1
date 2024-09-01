@@ -6,7 +6,7 @@ body, ul {
 
 /* Style the vertical navbar */
 .vertical-navbar {
-    background-color: #333; /* Background color */
+    background-color: yellowgreen; /* Background color */
     color: #fff; /* Text color */
     width: 200px; /* Width of the navbar */
     position: fixed; /* Fixed position */
